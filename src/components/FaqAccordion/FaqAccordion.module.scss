@@ -1,0 +1,65 @@
+@use "@/styles/colors";
+
+.accordion {
+  display: grid;
+  gap: .55rem;
+
+  details {
+    border: 1px solid colors.$border;
+    border-radius: .65rem;
+    background: colors.$white;
+    box-shadow: 0 2px 8px rgba(colors.$dark, .05);
+    transition: border-color 180ms ease;
+  }
+
+  details:hover, details[open] { border-color: #d59b72; }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3rem;
+    padding: .65rem .9rem;
+    border-radius: inherit;
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible { outline: 2px solid colors.$primary; outline-offset: 2px; }
+
+  summary span {
+    display: grid;
+    flex: 0 0 1.8rem;
+    height: 1.8rem;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff0e4;
+    color: colors.$primary;
+
+    &::before {
+      content: "";
+      width: .43rem;
+      height: .43rem;
+      border: solid currentColor;
+      border-width: 0 2px 2px 0;
+      transform: translateY(-2px) rotate(45deg);
+      transition: transform 200ms ease;
+    }
+  }
+
+  details[open] summary span::before { transform: translateY(2px) rotate(225deg); }
+  details[open] p { animation: expand 220ms ease-out; }
+  details p { margin: 0; padding: .15rem .9rem .9rem; white-space: pre-line; line-height: 1.65; }
+}
+
+@keyframes expand {
+  from { opacity: 0; transform: translateY(-.35rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion details, .accordion summary span::before { transition: none; }
+  .accordion details[open] p { animation: none; }
+}

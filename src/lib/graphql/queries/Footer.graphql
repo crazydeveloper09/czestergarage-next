@@ -1,0 +1,21 @@
+query Footer {
+  footer(where: { title: "Główna stopka" }) {
+    columns {
+      ...FooterColumnFields
+    }
+    logo {
+      url
+    }
+    description
+    copyright
+    address
+    phone
+    email
+    realization {
+      ...LinkFields
+    }
+    openingHours {
+      ...OpeningHourFields
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use "@/styles/colors";
+@use "@/styles/mixins";
+
+.wrapper {
+    @include mixins.flex-justify-wrap(space-between, center, wrap);
+    padding: 24px 64px;
+    color: colors.$text;
+
+    & a {
+        color: colors.$text;
+        text-decoration: none;
+
+        &:hover {
+            font-weight: 600;
+            color: colors.$primary;
+            border-bottom: 2px solid colors.$primary;
+            padding-bottom: 4px;
+        }
+    }
+}
+
+.logo {
+    img {
+        height: 60px;
+    }
+}
+
+.menu {
+    @include mixins.flex-justify-wrap(space-between, center, wrap);
+    gap: 32px;
+
+    & ul {
+        @include mixins.flex-justify-wrap(space-between, center, wrap);
+        list-style: none;
+        padding-inline-start: 0;
+        text-transform: uppercase;
+        gap: 32px;
+    }
+
+    & a.active {
+        font-weight: 600;
+        color: colors.$primary;
+        border-bottom: 2px solid colors.$primary;
+        padding-bottom: 4px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.cta {
+    @include mixins.flex-justify-wrap(space-between, center, wrap);
+    gap: 16px;
+    background-color: colors.$primary;
+    padding: 8px 16px;
+    color: colors.$white;
+    border-radius: 4px;
+
+    & a {
+        font-size: 14px;
+        font-weight: 600;
+        color: colors.$white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

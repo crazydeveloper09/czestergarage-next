@@ -1,0 +1,4 @@
+fragment GallerySectionFields on GallerySection {
+    title
+    images { url }
+}

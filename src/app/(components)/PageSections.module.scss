@@ -1,0 +1,105 @@
+@use "@/styles/colors";
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem 0;
+  padding: 1rem var(--page-gutter);
+  margin: 0;
+  background: colors.$bg-light;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    padding-inline: .75rem;
+    line-height: 1.3;
+    font-size: .85rem;
+    font-weight: 600;
+  }
+
+  li + li { border-inline-start: 1px solid colors.$border; }
+
+  svg {
+    flex: 0 0 1.9rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    color: colors.$primary;
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li { justify-content: flex-start; padding-inline: .4rem; }
+    li + li { border: 0; }
+  }
+}
+
+.values {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) 2.4fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem var(--page-gutter);
+  background: colors.$bg-light;
+
+  h2 { font-size: clamp(1.3rem, 2.3vw, 2rem); margin: 0; }
+  .benefits { padding: 0; }
+  li { flex-direction: column; text-align: center; }
+  @media (max-width: 800px) { grid-template-columns: 1fr; }
+}
+
+.workshopStats {
+  $overlay: rgba(colors.$dark, .78);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 1.25rem var(--page-gutter);
+  background: colors.$dark linear-gradient($overlay, $overlay) center 55% / cover;
+  background-image: linear-gradient($overlay, $overlay), url("/workshop-stats.png");
+  color: colors.$white;
+  text-align: center;
+
+  div + div { border-inline-start: 1px solid colors.$primary; }
+  dt { padding-inline: .5rem; font-size: .85rem; }
+  svg { display: block; width: 2rem; height: 2rem; margin: 0 auto .25rem; color: colors.$primary; }
+  strong { display: block; font-size: 1.55rem; line-height: 1.2; }
+  dd { margin: .25rem 0 0; }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1rem;
+    div:nth-child(odd) { border-inline-start: 0; }
+  }
+}
+
+.faq {
+  padding: 1rem var(--page-gutter) 1.5rem;
+
+  > span { color: colors.$primary; text-transform: uppercase; font-size: .875rem; font-weight: 700; }
+  h2 { margin: .2rem 0 .65rem; font-size: clamp(1.25rem, 2.35vw, 1.85rem); }
+}
+
+.contactPage {
+  --page-gutter: max(clamp(1rem, 5vw, 6rem), calc((100% - 88rem) / 2));
+
+  > section:first-child {
+    min-height: clamp(12.75rem, 20vw, 19rem);
+  }
+
+  > section[id="kontakt"] {
+    margin: 0;
+    padding: clamp(1rem, 1.8vw, 1.6rem) var(--page-gutter);
+    border-radius: 0;
+    background-image: linear-gradient(90deg, rgba(colors.$dark, .94), rgba(colors.$dark, .36)), url("/workshop-stats.png");
+  }
+
+  .faq {
+    padding-block: clamp(.85rem, 2vw, 1.5rem) 1.5rem;
+    color: #14212d;
+
+
+  }
+}

@@ -1,0 +1,20 @@
+fragment ServiceFields on Service {
+  id
+  title
+  slug
+  description
+  icon
+  shortDescription
+  heroImage { url }
+  gallery { url }
+  featured
+  prizeFrom
+  duration
+  benefits {
+    ...BenefitFields
+  }
+  subservices {
+    ...SubservicesFields
+  }
+}
+

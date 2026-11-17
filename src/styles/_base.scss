@@ -1,0 +1,29 @@
+@use 'colors';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  --page-gutter: max(clamp(1rem, 6.6vw, 7rem), calc((100% - 88rem) / 2));
+}
+
+body {
+  background: colors.$white;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main :is(a, button) {
+    transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+

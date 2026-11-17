@@ -1,0 +1,33 @@
+fragment PageFields on Page {
+  title
+  slug
+  sections {
+    __typename
+    ... on HeroSection {
+      ...HeroSectionFields
+    }
+    ... on ContactInfo {
+      ...ContactInfoFields
+    }
+    ... on CtaSection {
+      ...CtaSectionFields
+    }
+    ... on ServicesSection {
+      ...ServicesSectionFields
+    }
+    ... on AboutSection {
+      ...AboutSectionFields
+    }
+    ... on FaqSection {
+      ...FaqSectionFields
+    }
+    ... on ReviewsSection {
+      title
+    }
+  }
+  seo {
+    title
+    description
+  }
+}
+

@@ -1,0 +1,11 @@
+fragment NavigationFields on Navigation {
+  logo {
+    url
+  }
+  items {
+    ...LinkFields
+  }
+  cta {
+    ...LinkFields
+  }
+}

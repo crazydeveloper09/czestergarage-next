@@ -1,0 +1,6 @@
+fragment FaqSectionFields on FaqSection {
+    title
+    items {
+        ...FaqItemFields
+    }
+}

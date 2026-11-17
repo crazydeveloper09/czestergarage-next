@@ -1,0 +1,5 @@
+fragment StatFields on Stat {
+    value
+    label
+    description
+}

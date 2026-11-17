@@ -1,0 +1,83 @@
+@use "@/styles/colors";
+
+.section {
+  padding: clamp(1rem, 2.5vw, 2rem) var(--page-gutter) clamp(1.75rem, 3vw, 2.5rem);
+
+  h2 { margin: .25rem 0 0; font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  margin-bottom: .85rem;
+}
+
+.label {
+  color: colors.$primary;
+  font-size: .825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding-block: .35rem;
+  color: colors.$primary;
+  font-size: .8rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; text-underline-offset: .2em; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.65rem, 1.5vw, 1.25rem);
+
+  @media (max-width: 670px) { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1rem clamp(1rem, 1.8vw, 1.5rem);
+  border: 1px solid colors.$border;
+  border-radius: .6rem;
+  box-shadow: 0 2px 14px rgba(colors.$dark, .03);
+  font-size: .85rem;
+
+  blockquote { margin: 0 0 .75rem; }
+  p { margin: .3rem 0 0; }
+  figcaption {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    margin-top: auto;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+
+  img { flex: none; border-radius: 50%; object-fit: cover; }
+}
+
+.stars { color: colors.$primary; letter-spacing: .14em; }
+
+.source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1rem;
+}
+
+.source { margin-top: .85rem; font-size: .8rem; }
+
+.source a {
+  color: colors.$primary;
+  text-decoration: underline;
+}

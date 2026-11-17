@@ -1,0 +1,13 @@
+fragment CtaSectionFields on CtaSection {
+  id
+  title
+  subtitle
+  link {
+    ...LinkFields
+  }
+  backgroundImage {
+    url
+    width
+    height
+  }
+}

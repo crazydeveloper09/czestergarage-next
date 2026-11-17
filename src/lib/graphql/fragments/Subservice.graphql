@@ -1,0 +1,4 @@
+fragment SubservicesFields on Subservice {
+    name
+    price
+}

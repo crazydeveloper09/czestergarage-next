@@ -1,0 +1,5 @@
+query WorkshopGallery {
+  gallerySections(stage: PUBLISHED, where: { title: "Galeria warsztatu" }, first: 1) {
+    ...GallerySectionFields
+  }
+}

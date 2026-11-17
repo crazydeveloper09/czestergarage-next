@@ -1,0 +1,32 @@
+@use "@/styles/colors";
+@use "@/styles/mixins";
+
+.banner {
+  @include mixins.flex-justify-wrap(space-between, center, wrap);
+  gap: 1rem 2rem;
+
+  margin: 2rem auto;
+  margin-inline: var(--page-gutter);
+  padding: 1.75rem clamp(1.25rem, 5vw, 4rem);
+  border-radius: .35rem;
+  color: colors.$white;
+  $overlay: rgba(colors.$dark, .73);
+  background: colors.$dark linear-gradient($overlay, $overlay) center / cover;
+  background-image: linear-gradient($overlay, $overlay), var(--cta-image, none);
+  scroll-margin-top: 5rem;
+
+  h2 { color: inherit; font-size: clamp(1.12rem, 1.65vw, 1.5rem); }
+  h2, p { margin: 0; white-space: pre-line; }
+  p { margin-top: .5rem; }
+  a {
+    padding: .65rem 1rem;
+    border-radius: .35rem;
+    background: colors.$primary;
+    text-decoration: none;
+    color: colors.$white;
+    font-size: .8rem;
+    font-weight: 700;
+    &:hover { box-shadow: inset 0 0 0 2px rgba(colors.$white, .35); }
+  }
+}
+

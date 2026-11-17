@@ -1,0 +1,6 @@
+query PageBySlug($slug: String!) {
+  page(stage: PUBLISHED, where: { slug: $slug }) {
+    ...PageFields
+  }
+}
+

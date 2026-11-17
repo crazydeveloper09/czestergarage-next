@@ -1,0 +1,4 @@
+fragment FaqItemFields on FaqItem {
+    question
+    answer
+}

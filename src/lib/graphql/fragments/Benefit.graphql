@@ -1,0 +1,4 @@
+fragment BenefitFields on Benefit {
+    text
+    icon
+}

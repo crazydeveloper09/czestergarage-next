@@ -1,0 +1,13 @@
+fragment AboutSectionFields on AboutSection {
+  id
+  title
+  content
+  image {
+    url
+    width
+    height
+  }
+  stats {
+    ...StatFields
+  }
+}

@@ -1,0 +1,4 @@
+fragment OpeningHourFields on OpeningHour {
+  day
+  hours
+}

@@ -1,0 +1,12 @@
+query ServiceBySlug($slug: String!) {
+  service(stage: PUBLISHED, where: { slug: $slug }) {
+    ...ServiceFields
+    faq {
+      ...FaqItemFields
+    }
+    seo {
+      title
+      description
+    }
+  }
+}

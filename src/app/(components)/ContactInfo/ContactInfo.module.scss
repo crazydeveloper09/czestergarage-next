@@ -1,0 +1,39 @@
+@use "@/styles/colors";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 0;
+  padding: .85rem var(--page-gutter);
+  background: colors.$primary;
+  color: colors.$white;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: clamp(.75rem, 4vw, 4rem);
+}
+
+.item + .item { border-inline-start: 1px solid rgba(colors.$white, .25); }
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 3rem;
+  height: 3rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 1.35rem;
+}
+
+.content h4 { margin: 0; font-size: .9rem; text-transform: uppercase; }
+.content p { margin: 0; font-size: .8rem; }
+
+@media (max-width: 650px) {
+  .wrapper { display: grid; justify-content: start; }
+  .item { padding: 0; }
+  .item + .item { border: 0; }
+}

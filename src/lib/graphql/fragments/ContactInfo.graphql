@@ -1,0 +1,5 @@
+fragment ContactInfoFields on ContactInfo {
+  items {
+    ...ContactBadgeElementFields
+  }
+}

@@ -1,0 +1,6 @@
+fragment FooterColumnFields on FooterColumn {
+  title
+  links {
+    ...LinkFields
+  }
+}

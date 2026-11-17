@@ -1,0 +1,17 @@
+fragment HeroSectionFields on HeroSection {
+  title
+  label
+  description
+  image {
+    url
+  }
+  primaryButton {
+    ...LinkFields
+  }
+  secondaryButton {
+    ...LinkFields
+  }
+  badges {
+    ...HeroBadgeFields
+  }
+}

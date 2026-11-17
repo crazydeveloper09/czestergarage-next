@@ -1,0 +1,22 @@
+@use "@/styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .65rem;
+  border-radius: .25rem;
+  border: 1px solid rgba(colors.$white, .22);
+  background: rgba(colors.$dark, .7);
+  color: colors.$white;
+}
+
+.icon { flex: 0 0 1.5rem; width: 1.5rem; height: 1.5rem; color: colors.$primary; }
+
+.description {
+  max-width: 13ch;
+  margin: 0;
+  font-size: .7rem;
+  font-weight: 600;
+  line-height: 1.3;
+}

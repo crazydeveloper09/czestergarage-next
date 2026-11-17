@@ -1,0 +1,4 @@
+fragment HeroBadgeFields on HeroBadge {
+  text
+  icon
+}
