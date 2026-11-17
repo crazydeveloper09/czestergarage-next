@@ -41,6 +41,11 @@ export async function WorkshopContact() {
   if (!footer) return null;
 
   const { phone, email, address, openingHours } = footer;
+  const days = openingHours?.day?.split(/\r?\n/) ?? [];
+  const hours = openingHours?.hours.split(/\r?\n/) ?? [];
+  const schedule = Array.from({ length: Math.max(days.length, hours.length) }, (_, index) =>
+    [days[index], hours[index]].filter(Boolean).join(" · ")
+  ).join("\n");
   const dialNumber = phone.replace(/[^+\d]/g, "");
   const phoneHref = `tel:${dialNumber.length === 9 ? "+48" : ""}${dialNumber}`;
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
@@ -48,7 +53,7 @@ export async function WorkshopContact() {
     { label: "Telefon", icon: "phone", value: phone, href: phoneHref },
     { label: "E-mail", icon: "envelope", value: email, href: `mailto:${email}` },
     { label: "Adres warsztatu", icon: "map", value: address, href: directions },
-    { label: "Godziny otwarcia", icon: "Clock", value: [openingHours?.day, openingHours?.hours].filter(Boolean).join(" · ") },
+    { label: "Godziny otwarcia", icon: "Clock", value: schedule },
   ].filter(({ value }) => value);
 
   return (

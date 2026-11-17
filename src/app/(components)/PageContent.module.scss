@@ -112,7 +112,7 @@
 
   svg { grid-row: span 2; width: 1.7rem; height: 1.7rem; color: var(--contact-accent); }
   dt { margin: 0; font-size: .8rem; font-weight: 500; }
-  dd { font-size: .9rem; font-weight: 700; }
+  dd { font-size: .9rem; font-weight: 700; white-space: pre-line; }
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--contact-link); text-decoration: underline; }
 }
