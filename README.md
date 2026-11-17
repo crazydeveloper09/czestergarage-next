@@ -24,6 +24,12 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 Ustaw `RESEND_API_KEY` oraz `RESEND_FROM_EMAIL` w `.env.local` i w środowisku wdrożenia. Adres nadawcy musi należeć do domeny zweryfikowanej w Resend. Adres odbiorcy pochodzi z pola e-mail stopki w Hygraph.
 
+## Opinie Google
+
+Opinie pobiera przeglądarka przez Maps JavaScript API i Places API (New). Włącz oba API dla klucza i ustaw ograniczenie aplikacji do witryn, np. `https://czestergarage-next.vercel.app/*`. Dodaj również własną domenę po jej podłączeniu.
+
+Klucz przeglądarkowy ustaw w `GOOGLE_MAPS_BROWSER_API_KEY`. Przy braku tej zmiennej aplikacja używa dotychczasowego `GOOGLE_PLACES_API_KEY`. Ten klucz jest przekazywany do przeglądarki i powinien mieć ograniczenie do witryn oraz obu wymaganych API. Identyfikator miejsca pozostaje w `GOOGLE_PLACES_PLACE_ID`. Po zmianie zmiennych na Vercel wykonaj ponowne wdrożenie.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
