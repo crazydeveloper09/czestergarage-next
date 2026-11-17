@@ -86,14 +86,7 @@ export default function ReviewsClient({ item, apiKey, placeId, fallbackUrl }: { 
           ))}
         </div>
       )}
-      {reviews.length > 0 && (
-        <div className={styles.source}>
-          <span>Google Maps</span>
-          {place?.attributions?.map(({ provider, providerURI }) => (
-            providerURI ? <a key={provider} href={providerURI}>{provider}</a> : <span key={provider}>{provider}</span>
-          ))}
-        </div>
-      )}
+      
     </section>
   );
 }
