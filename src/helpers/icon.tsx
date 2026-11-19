@@ -3,9 +3,11 @@ import { IoCarSport, IoCarSportOutline, IoStarOutline } from 'react-icons/io5';
 import { LiaSnowflake } from 'react-icons/lia';
 import { LuBatteryCharging, LuCalendar, LuClock, LuCarFront, LuCircleDot, LuDroplet, LuLink2, LuMonitorCog, LuPackage, LuSettings, LuSettings2, LuSnowflake, LuWrench, LuMail, LuMapPin, LuPhone, LuShieldCheck, LuStar, LuTag, LuUser } from 'react-icons/lu';
 import { PiTire } from 'react-icons/pi';
+import { LuRadar } from 'react-icons/lu';
 
 
 const ICON_MAP: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+  'radar': LuRadar,
   'Clock': LuClock,
   'car': IoCarSportOutline,
   'tire': PiTire,

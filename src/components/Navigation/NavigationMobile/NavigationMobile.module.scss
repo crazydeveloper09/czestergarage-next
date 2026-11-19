@@ -6,7 +6,7 @@
   background: colors.$white;
   color: colors.$text;
 
-  :is(a, summary):focus-visible { outline: 2px solid colors.$primary; outline-offset: 2px; }
+  :is(a, button):focus-visible { outline: 2px solid colors.$primary; outline-offset: 2px; }
 }
 
 .logo { display: block; width: auto; max-width: calc(100% - 4rem); height: 3rem; object-fit: contain; }
@@ -19,7 +19,10 @@
   width: 3rem;
   height: 3rem;
   place-items: center;
-  list-style: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
@@ -38,13 +41,14 @@
   span:last-child { transform: translateY(7px); }
 }
 
-.menu[open] .toggle {
+.menu[data-open="true"] .toggle {
   span:first-child { transform: rotate(45deg); }
   span:nth-child(2) { opacity: 0; }
   span:last-child { transform: rotate(-45deg); }
 }
 
-.menu ul { margin: .75rem 0 0; padding: 0; list-style: none; }
+.content { overflow: hidden; }
+.menu ul { margin: 0; padding: .75rem 0 0; list-style: none; }
 
 .menu a {
   display: block;

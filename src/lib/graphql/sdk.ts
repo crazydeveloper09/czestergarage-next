@@ -18,6 +18,7 @@ export type IconEnum =
   | 'envelope'
   | 'map'
   | 'phone'
+  | 'radar'
   | 'shield'
   | 'snowflake'
   | 'star'
@@ -26,7 +27,7 @@ export type IconEnum =
   | 'user'
   | 'wrench';
 
-export type AboutSectionFieldsFragment = { id: string, title: string, content: string, image: { url: string, width: number | null, height: number | null }, stats: Array<{ value: string, label: string, description: string }> };
+export type AboutSectionFieldsFragment = { id: string, title: string, content: string, image: { url: string, width: number | null, height: number | null }, stats: Array<{ value: string, label: string, description: string | null }> };
 
 export type BenefitFieldsFragment = { text: string, icon: IconEnum };
 
@@ -55,7 +56,7 @@ export type NavigationFieldsFragment = { logo: { url: string }, items: Array<{ l
 export type OpeningHourFieldsFragment = { day: string | null, hours: string };
 
 export type PageFieldsFragment = { title: string, slug: string | null, sections: Array<
-    | { __typename: 'AboutSection', id: string, title: string, content: string, image: { url: string, width: number | null, height: number | null }, stats: Array<{ value: string, label: string, description: string }> }
+    | { __typename: 'AboutSection', id: string, title: string, content: string, image: { url: string, width: number | null, height: number | null }, stats: Array<{ value: string, label: string, description: string | null }> }
     | { __typename: 'ContactInfo', items: Array<{ title: string, icon: IconEnum, description: string }> }
     | { __typename: 'CtaSection', id: string, title: string, subtitle: string, link: { label: string, href: string, openInNewTab: boolean | null }, backgroundImage: { url: string, width: number | null, height: number | null } }
     | { __typename: 'FaqSection', title: string, items: Array<{ question: string, answer: string }> }
@@ -68,7 +69,7 @@ export type ServiceFieldsFragment = { id: string, title: string, slug: string | 
 
 export type ServicesSectionFieldsFragment = { id: string, title: string, subtitle: string, services: Array<{ id: string, title: string, slug: string | null, description: string, icon: IconEnum | null, shortDescription: string, featured: boolean, prizeFrom: number | null, duration: string, heroImage: { url: string } | null, gallery: Array<{ url: string }>, benefits: Array<{ text: string, icon: IconEnum }>, subservices: Array<{ name: string, price: string }> }> };
 
-export type StatFieldsFragment = { value: string, label: string, description: string };
+export type StatFieldsFragment = { value: string, label: string, description: string | null };
 
 export type SubservicesFieldsFragment = { name: string, price: string };
 
@@ -88,7 +89,7 @@ export type PageBySlugQueryVariables = Exact<{
 
 
 export type PageBySlugQuery = { page: { title: string, slug: string | null, sections: Array<
-      | { __typename: 'AboutSection', id: string, title: string, content: string, image: { url: string, width: number | null, height: number | null }, stats: Array<{ value: string, label: string, description: string }> }
+      | { __typename: 'AboutSection', id: string, title: string, content: string, image: { url: string, width: number | null, height: number | null }, stats: Array<{ value: string, label: string, description: string | null }> }
       | { __typename: 'ContactInfo', items: Array<{ title: string, icon: IconEnum, description: string }> }
       | { __typename: 'CtaSection', id: string, title: string, subtitle: string, link: { label: string, href: string, openInNewTab: boolean | null }, backgroundImage: { url: string, width: number | null, height: number | null } }
       | { __typename: 'FaqSection', title: string, items: Array<{ question: string, answer: string }> }
